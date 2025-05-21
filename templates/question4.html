@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown Q&A with Cards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button class="expand-carousel-btn" id="expand-carousel-btn">Show reflection cards</button>
+    <div class="container">
+        <div class="scroll-wrapper">
+            <canvas id="connections"></canvas>
+            <aside class="sidebar">
+                <div class="navigation">
+                    <select id="page-selector" class="page-selector">
+                        <option value="1">Question 1</option>
+                        <option value="2">Question 2</option>
+                        <option value="3">Question 3</option>
+                        <option value="4" selected>Question 4</option>
+                        <option value="5">Question 5</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h2>User request:</h2>
+                    <div id="question-markdown"></div>
+                </div>
+                <div class="answer">
+                    <div id="answer-markdown"></div>
+                </div>
+            </aside>
+            <main class="cards-section">
+                <div id="explore-cards" class="explore-cards"></div>
+            </main>
+        </div>
+    </div>
+    <div class="bottom-cards">
+        <button class="carousel-arrow left" aria-label="Scroll left">&#8592;</button>
+        <div class="carousel-content" id="bottom-cards"></div>
+        <button class="carousel-arrow right" aria-label="Scroll right">&#8594;</button>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='config.js') }}"></script>
+    <script src="{{ url_for('static', filename='pages.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html> 
